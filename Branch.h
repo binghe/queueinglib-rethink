@@ -13,9 +13,27 @@
 // along with this program.  If not, see http://www.gnu.org/licenses/.
 // 
 
-package com.gensym.rethink;
+#ifndef BRANCH_H_
+#define BRANCH_H_
 
-simple Branch extends org.omnetpp.queueing.Router
-{
-    @class(Branch);
+#include <Router.h>
+
+namespace queueing {
+
+class Branch: public Router {
+private:
+    double unity;
+
+protected:
+    double *proportions;  // probability of each path
+    double *probabilities; // CDF
+    void initialize();
+    void handleMessage(cMessage *msg);
+
+public:
+    ~Branch();
+};
+
 }
+
+#endif /* BRANCH_H_ */

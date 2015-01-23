@@ -15,9 +15,8 @@
 
 package com.gensym.rethink;
 
-//
-// TODO auto-generated type
-//
-channel Path
+channel Path extends ned.IdealChannel
 {
+    @display("ls=blue,2,d");
+    double branch_proportion = default(1.0);
 }
