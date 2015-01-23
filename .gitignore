@@ -1,3 +1,4 @@
 /out/
 /Makefile
 *.dylib
+*.DS_Store
